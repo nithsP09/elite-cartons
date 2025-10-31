@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -133,20 +134,31 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className="p-6 rounded-lg border border-border bg-card">
+              {/* Phone & WhatsApp in same card, but listed separately */}
+              <div className="p-6 rounded-lg border border-border bg-card space-y-6">
+                {/* Phone */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                    <a href="tel:+918589818425" className="text-black hover:underline">
-                      +91 8589818425
-                    </a>
+                    <p className="text-black">+91 8589818425</p>
+                  </div>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center">
+                    <FaWhatsapp className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-1">WhatsApp</h3>
+                    <p className="text-black">+91 8589818425</p>
                   </div>
                 </div>
               </div>
+
 
               {/* Location */}
               <div className="p-6 rounded-lg border border-border bg-card">
@@ -223,14 +235,17 @@ export default function ContactPage() {
                   {/* Phone */}
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
-                    <input
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 XXXXX XXXXX"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-accent"
-                    />
+                    <div className="flex items-center">
+                      <span className="px-3 py-2 bg-muted border border-border rounded-l-lg text-foreground select-none">+91</span>
+                      <input
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your number"
+                        className="w-full px-4 py-2 border border-border bg-background text-foreground focus:ring-2 focus:ring-accent rounded-r-lg"
+                      />
+                    </div>
                     {fieldErrors.phone && <p className="text-red-600 text-sm mt-1">{fieldErrors.phone}</p>}
                   </div>
 
