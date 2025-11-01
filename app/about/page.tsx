@@ -214,7 +214,7 @@ export default function AboutPage() {
                   <CheckCircle className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-foreground">Location</p>
-                    <p className="text-sm text-muted-foreground">Kerala, India</p>
+                    <p className="text-sm text-muted-foreground">Kochi, Kerala, India</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
