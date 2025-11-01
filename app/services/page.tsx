@@ -80,7 +80,7 @@ export default function ServicesPage() {
         const element = document.querySelector(hash)
         if (element) {
           setTimeout(() => {
-            const yOffset = -100 // adjust this value depending on your header height
+            const yOffset = -150 // adjust this value depending on your header height
             const y =
               element.getBoundingClientRect().top + window.scrollY + yOffset
             window.scrollTo({ top: y, behavior: "smooth" })
