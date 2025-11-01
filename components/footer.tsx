@@ -125,10 +125,10 @@ export function Footer() {
             </p>
 
             <div className="flex gap-6">
-              <Link href="#" className="hover:text-accent transition-colors">
+              <Link href="/privacy-policy" className="hover:text-accent transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-accent transition-colors">
+              <Link href="/terms-of-service" className="hover:text-accent transition-colors">
                 Terms of Service
               </Link>
             </div>
