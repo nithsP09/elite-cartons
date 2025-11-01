@@ -150,3 +150,8 @@
     @apply font-serif font-bold;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+

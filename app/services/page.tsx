@@ -2,6 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import type { Metadata } from "next"
+import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Our Services | Elite Cartons - Custom Packaging Solutions",
@@ -67,6 +69,24 @@ export const metadata: Metadata = {
 }
 
 export default function ServicesPage() {
+
+  const pathname = usePathname()
+
+  useEffect(() => {
+    // Wait for client render
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash
+      if (hash) {
+        const element = document.querySelector(hash)
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" })
+          }, 300)
+        }
+      }
+    }
+  }, [pathname])
+
   const services = [
     {
       title: "Tissue Boxes",
