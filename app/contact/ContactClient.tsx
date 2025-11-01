@@ -4,6 +4,14 @@ import { useState } from "react"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -264,21 +272,16 @@ export default function ContactPage() {
                   </div>
 
                   {/* Subject */}
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-accent"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="inquiry">General Inquiry</option>
-                      <option value="quote">Request a Quote</option>
-                      <option value="other">Other</option>
-                    </select>
-                    {fieldErrors.subject && <p className="text-red-600 text-sm mt-1">{fieldErrors.subject}</p>}
-                  </div>
+                  <Select value={formData.subject} onValueChange={(val) => setFormData({ ...formData, subject: val })}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select a subject" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="inquiry">General Inquiry</SelectItem>
+                      <SelectItem value="quote">Request a Quote</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
 
                   {/* Message (Optional) */}
                   <div>
