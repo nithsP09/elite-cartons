@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
@@ -80,7 +82,7 @@ export default function ServicesPage() {
         const element = document.querySelector(hash)
         if (element) {
           setTimeout(() => {
-            const yOffset = -120 // adjust this value depending on your header height
+            const yOffset = -180 // adjust this value depending on your header height
             const y =
               element.getBoundingClientRect().top + window.scrollY + yOffset
             window.scrollTo({ top: y, behavior: "smooth" })
