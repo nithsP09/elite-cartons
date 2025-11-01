@@ -272,21 +272,25 @@ export default function ContactPage() {
                   </div>
 
                   {/* Subject */}
-                  <Select
-                    value={formData.subject}
-                    onValueChange={(val) => setFormData({ ...formData, subject: val })}
-                  >
-                    <SelectTrigger
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-base focus:ring-2 focus:ring-accent focus:outline-none min-h-[45px]"
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
+                    <Select
+                      value={formData.subject}
+                      onValueChange={(val) => setFormData({ ...formData, subject: val })}
                     >
-                      <SelectValue placeholder="Select a subject" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border border-border rounded-lg">
-                      <SelectItem value="inquiry">General Inquiry</SelectItem>
-                      <SelectItem value="quote">Request a Quote</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                      <SelectTrigger
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-base focus:ring-2 focus:ring-accent focus:outline-none min-h-[42px]"
+                      >
+                        <SelectValue placeholder="Select a subject" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background border border-border rounded-lg">
+                        <SelectItem value="inquiry">General Inquiry</SelectItem>
+                        <SelectItem value="quote">Request a Quote</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
 
 
                   {/* Message (Optional) */}
