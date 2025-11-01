@@ -277,7 +277,7 @@ export default function ContactPage() {
                     onValueChange={(val) => setFormData({ ...formData, subject: val })}
                   >
                     <SelectTrigger
-                      className="w-full h-12 px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:ring-2 focus:ring-accent focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-base focus:ring-2 focus:ring-accent focus:outline-none min-h-[45px]"
                     >
                       <SelectValue placeholder="Select a subject" />
                     </SelectTrigger>
