@@ -65,22 +65,22 @@ export function Footer() {
             <h4 className="font-serif font-bold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services" className="hover:text-accent transition-colors">
+                <Link href="/services#tissue-boxes" className="hover:text-accent transition-colors">
                   Tissue Boxes
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-accent transition-colors">
+                <Link href="/services#paper-bags" className="hover:text-accent transition-colors">
                   Paper Bags
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-accent transition-colors">
+                <Link href="/services#cake-boxes" className="hover:text-accent transition-colors">
                   Cake Boxes
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-accent transition-colors">
+                <Link href="/services#food-packaging" className="hover:text-accent transition-colors">
                   Food Packaging
                 </Link>
               </li>

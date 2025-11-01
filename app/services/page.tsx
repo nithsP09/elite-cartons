@@ -139,7 +139,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-16">
             {services.map((service, index) => (
-              <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div id={service.title.toLowerCase().replace(/\s+/g, "-")} key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Content */}
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{service.title}</h2>
