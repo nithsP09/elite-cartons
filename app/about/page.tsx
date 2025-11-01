@@ -85,7 +85,7 @@ export default function AboutPage() {
             </p>
             <p>
               Over the past decade, we've built our reputation on three core principles: quality, reliability, and
-              customer-centric service. We understand that packaging is more than just a container, it's a reflection of
+              customer-centric service. We understand that packaging is more than just a container : it's a reflection of
               your brand and a promise to your customers.
             </p>
             <p>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                   <CheckCircle className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-foreground">Company Name</p>
-                    <p className="text-sm text-muted-foreground">Elite Cartons and Packaging</p>
+                    <p className="text-sm text-muted-foreground">ElitE Cartons and Packaging</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

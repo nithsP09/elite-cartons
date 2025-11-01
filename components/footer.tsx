@@ -119,9 +119,15 @@ export function Footer() {
 
             <p className="text-center">
               Designed with ❤️ by{" "}
-              <span className="font-bold" style={{ color: "#fffdd0" }}>
+              <a
+                href="https://your-portfolio-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold hover:underline"
+                style={{ color: "#fffdd0" }}
+              >
                 Nithya Parvathy
-              </span>
+              </a>
             </p>
 
             <div className="flex gap-6">
