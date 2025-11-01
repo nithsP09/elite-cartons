@@ -272,16 +272,22 @@ export default function ContactPage() {
                   </div>
 
                   {/* Subject */}
-                  <Select value={formData.subject} onValueChange={(val) => setFormData({ ...formData, subject: val })}>
-                    <SelectTrigger className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-accent">
+                  <Select
+                    value={formData.subject}
+                    onValueChange={(val) => setFormData({ ...formData, subject: val })}
+                  >
+                    <SelectTrigger
+                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-accent focus:outline-none"
+                    >
                       <SelectValue placeholder="Select a subject" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-background border border-border rounded-lg">
                       <SelectItem value="inquiry">General Inquiry</SelectItem>
                       <SelectItem value="quote">Request a Quote</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
+
 
                   {/* Message (Optional) */}
                   <div>
