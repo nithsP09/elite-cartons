@@ -10,45 +10,25 @@ export default function ServicesPageClient() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (typeof window === "undefined") return
-
-    const handleHashScroll = () => {
+    if (typeof window !== "undefined") {
       const hash = window.location.hash
-      if (!hash) return
+      if (hash) {
+        const element = document.querySelector(hash)
+        if (element) {
+        const scrollToElement = () => {
+            const header = document.querySelector("header") // or your header selector
+            const headerHeight = header ? header.getBoundingClientRect().height : 0
+            const yOffset = -(headerHeight + 40)
+            const y = element.getBoundingClientRect().top + window.scrollY + yOffset
+            window.scrollTo({ top: y, behavior: "smooth" })
+        }
 
-      const element = document.querySelector(hash) as HTMLElement | null
-      if (!element) return
-
-      const scrollToWithOffset = () => {
-        // pick your header selector — try "header" or the actual header class you use
-        const header =
-          document.querySelector("header") ||
-          document.querySelector(".site-header") || // try your header classname
-          null
-
-        const headerHeight = header ? header.getBoundingClientRect().height : 0
-        const extraSpacing = 20 // extra spacing below header
-        const totalOffset = headerHeight + extraSpacing
-
-        // Use scrollMarginTop so scrollIntoView respects offset
-        element.style.scrollMarginTop = `${totalOffset}px`
-
-        // Smooth scroll into view using scrollIntoView — this will honor scrollMarginTop
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
+        // Run it twice: once now, again slightly later after layout settles
+        setTimeout(scrollToElement, 500)
+        setTimeout(scrollToElement, 1000)
+        }
       }
-
-      // run now and again to catch late layout changes
-      scrollToWithOffset()
-      setTimeout(scrollToWithOffset, 500)
-      setTimeout(scrollToWithOffset, 1200)
     }
-
-    // run on mount and whenever pathname changes (so SPA navigation with hash works)
-    handleHashScroll()
-
-    // Also listen to hashchange event (user clicking hashes directly)
-    window.addEventListener("hashchange", handleHashScroll, false)
-    return () => window.removeEventListener("hashchange", handleHashScroll)
   }, [pathname])
 
   const services = [
@@ -126,7 +106,7 @@ export default function ServicesPageClient() {
               <div
                 id={service.title.toLowerCase().replace(/\s+/g, "-")}
                 key={index}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                className="scroll-mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{service.title}</h2>
