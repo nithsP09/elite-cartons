@@ -85,7 +85,7 @@ export default function AboutPage() {
             </p>
             <p>
               Over the past decade, we've built our reputation on three core principles: quality, reliability, and
-              customer-centric service. We understand that packaging is more than just a container—it's a reflection of
+              customer-centric service. We understand that packaging is more than just a container — it's a reflection of
               your brand and a promise to your customers.
             </p>
             <p>
