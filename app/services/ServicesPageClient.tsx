@@ -22,7 +22,7 @@ export default function ServicesPageClient() {
             const headerHeight = header ? header.getBoundingClientRect().height : 0
 
             // Add some extra spacing (20px)
-            const yOffset = -(headerHeight + 20)
+            const yOffset = -(headerHeight + 40)
 
             const y = element.getBoundingClientRect().top + window.scrollY + yOffset
             window.scrollTo({ top: y, behavior: "smooth" })
