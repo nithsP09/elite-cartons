@@ -120,7 +120,7 @@ export function Footer() {
             <p className="text-center">
               Designed with ❤️ by{" "}
               <a
-                href="https://your-portfolio-link.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold hover:underline"
