@@ -276,7 +276,10 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
                     <Select
                       value={formData.subject}
-                      onValueChange={(val) => setFormData({ ...formData, subject: val })}
+                      onValueChange={(val) => {
+                        setFormData({ ...formData, subject: val })
+                        setFieldErrors((prev) => ({ ...prev, subject: "" })) // clear error when user selects
+                      }}
                     >
                       <SelectTrigger
                         className="w-full px-4 py-3 rounded-lg border border-border bg-background text-base focus:ring-2 focus:ring-accent focus:outline-none min-h-[42px]"
@@ -289,9 +292,12 @@ export default function ContactPage() {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
+
+                    {/* Show validation error */}
+                    {fieldErrors.subject && (
+                      <p className="text-red-600 text-sm mt-1">{fieldErrors.subject}</p>
+                    )}
                   </div>
-
-
 
                   {/* Message (Optional) */}
                   <div>
