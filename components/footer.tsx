@@ -119,16 +119,15 @@ export function Footer() {
 
             <p className="text-center">
               Designed with ❤️ by{" "}
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold hover:underline"
+              <span
+                onClick={(e) => e.preventDefault()}
+                className="font-bold cursor-pointer hover:underline"
                 style={{ color: "#fffdd0" }}
               >
                 Nithya Parvathy
-              </a>
+              </span>
             </p>
+
 
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">
