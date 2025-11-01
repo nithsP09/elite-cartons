@@ -10,26 +10,75 @@ export default function ServicesPageClient() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash
-      if (hash) {
-        const element = document.querySelector(hash)
-        if (element) {
-        const scrollToElement = () => {
-            const header = document.querySelector("header") // or your header selector
-            const headerHeight = header ? header.getBoundingClientRect().height : 0
-            const yOffset = -(headerHeight + 40)
-            const y = element.getBoundingClientRect().top + window.scrollY + yOffset
-            window.scrollTo({ top: y, behavior: "smooth" })
-        }
+  if (typeof window === "undefined") return
 
-        // Run it twice: once now, again slightly later after layout settles
-        setTimeout(scrollToElement, 500)
-        setTimeout(scrollToElement, 1000)
-        }
+  // Try a few header selectors so you don't depend on <header> tag specifically
+  const findHeader = () =>
+    document.querySelector(
+      "header, [role='banner'], .site-header, .main-header, #header"
+    ) as HTMLElement | null
+
+  // Scroll function that will compute offset and scroll smoothly
+  const performScroll = (hash: string) => {
+    if (!hash) return
+    const query = hash.startsWith("#") ? hash : `#${hash}`
+
+    // try multiple times until success (element may render later)
+    let attempts = 0
+    const maxAttempts = 8
+    const attemptDelay = 250 // ms
+
+    const tryScroll = () => {
+      attempts++
+      const element = document.querySelector(query) as HTMLElement | null
+      const header = findHeader()
+      const headerHeight = header ? header.getBoundingClientRect().height : 0
+
+      console.log("[scroll-debug] attempt", attempts, { query, element, headerHeight })
+
+      if (element) {
+        // compute final y with header offset + small gap
+        const gap = 20 // extra space below header
+        const y = Math.round(element.getBoundingClientRect().top + window.scrollY - (headerHeight + gap))
+
+        // ensure y is non-negative
+        const finalY = Math.max(0, y)
+        window.scrollTo({ top: finalY, behavior: "smooth" })
+        return
+      }
+
+      if (attempts < maxAttempts) {
+        setTimeout(tryScroll, attemptDelay)
+      } else {
+        console.warn("[scroll-debug] element not found after retries:", query)
       }
     }
-  }, [pathname])
+
+    // Run first try slightly later to let rendering finish
+    setTimeout(tryScroll, 120) // initial small delay
+  }
+
+  // When page loads, handle any existing hash
+  if (window.location.hash) {
+    performScroll(window.location.hash)
+  }
+
+  // Listen to hash changes (user clicks anchor, or programmatic change)
+  const onHashChange = () => {
+    performScroll(window.location.hash)
+  }
+  window.addEventListener("hashchange", onHashChange)
+
+  // Also listen for popstate (back/forward)
+  window.addEventListener("popstate", onHashChange)
+
+  // Clean up
+  return () => {
+    window.removeEventListener("hashchange", onHashChange)
+    window.removeEventListener("popstate", onHashChange)
+  }
+}, []) // empty deps — run once on client
+
 
   const services = [
     {
