@@ -15,18 +15,17 @@ export default function ServicesPageClient() {
       if (hash) {
         const element = document.querySelector(hash)
         if (element) {
-        // Wait a little longer for layout stabilization
-        setTimeout(() => {
-            // Dynamically measure header height if it exists
-            const header = document.querySelector("header")
+        const scrollToElement = () => {
+            const header = document.querySelector("header") // or your header selector
             const headerHeight = header ? header.getBoundingClientRect().height : 0
-
-            // Add some extra spacing (20px)
             const yOffset = -(headerHeight + 40)
-
             const y = element.getBoundingClientRect().top + window.scrollY + yOffset
             window.scrollTo({ top: y, behavior: "smooth" })
-        }, 500) // 500ms delay allows layout & animations to finish
+        }
+
+        // Run it twice: once now, again slightly later after layout settles
+        setTimeout(scrollToElement, 500)
+        setTimeout(scrollToElement, 1000)
         }
       }
     }
