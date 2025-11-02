@@ -1,5 +1,7 @@
 "use client"
 
+declare const grecaptcha: any;
+
 import { useState } from "react"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
@@ -69,6 +71,11 @@ export default function ContactPage() {
       return
     }
 
+    const token = await grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+      { action: "submit" }
+    );
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -82,6 +89,7 @@ export default function ContactPage() {
               : formData.subject === "inquiry"
               ? "General Inquiry"
               : "Other",
+          "g-recaptcha-response": token,
         }),
       })
 
