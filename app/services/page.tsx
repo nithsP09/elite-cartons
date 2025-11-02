@@ -47,7 +47,10 @@ title: "Our Services | Elite Cartons - Custom Packaging Solutions",
     siteName: "Elite Cartons",
     images: [
       {
-        url: "/logo_in_seo.jpg",
+        url:
+          process.env.NODE_ENV === "production"
+            ? "https://www.elitecartons.com/logo_in_seo.jpg"
+            : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
         width: 1200,
         height: 630,
         alt: "Elite Cartons Packaging Services",
