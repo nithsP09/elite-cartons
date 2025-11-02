@@ -1,7 +1,5 @@
 "use client"
 
-declare const grecaptcha: any;
-
 import { useState } from "react"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
@@ -63,6 +61,13 @@ export default function ContactPage() {
     setLoading(true)
     setError(null)
 
+    // Honeypot spam protection
+    if ((formData as any).botcheck) {
+      setError("Spam detected. Submission blocked.")
+      setLoading(false)
+      return
+    }
+
     const errors = validateForm()
     setFieldErrors(errors)
 
@@ -70,11 +75,6 @@ export default function ContactPage() {
       setLoading(false)
       return
     }
-
-    const token = await grecaptcha.execute(
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-      { action: "submit" }
-    );
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -89,7 +89,6 @@ export default function ContactPage() {
               : formData.subject === "inquiry"
               ? "General Inquiry"
               : "Other",
-          "g-recaptcha-response": token,
         }),
       })
 
@@ -320,6 +319,17 @@ export default function ContactPage() {
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-accent resize-none"
                     />
                   </div>
+
+                  {/* Honeypot Field (Hidden) */}
+                  <input
+                    type="text"
+                    name="botcheck"
+                    value={(formData as any).botcheck || ""}
+                    onChange={handleChange}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
 
                   {/* Submit */}
                   <button

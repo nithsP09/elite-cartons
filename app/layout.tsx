@@ -65,9 +65,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" />
         {/* ✅ LocalBusiness JSON-LD structured data for SEO */}
         <script
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-        ></script>
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
