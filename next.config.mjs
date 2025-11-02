@@ -7,27 +7,29 @@ const nextConfig = {
     unoptimized: true,
   },
   async headers() {
-    const isDev = process.env.NODE_ENV !== "production";
-
     return [
       {
         source: "/(.*)",
         headers: [
+          // Security Headers
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "no-referrer-when-downgrade" },
+
+          // ✅ FIXED CSP: allows hydration + analytics
           {
             key: "Content-Security-Policy",
-            value: isDev
-              ? // ✅ In development: allow inline scripts (so hydration works)
-                "default-src 'self'; img-src * data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
-              : // ✅ In production: safer CSP without unsafe-inline
-                "default-src 'self'; img-src * data:; script-src 'self'; style-src 'self' 'unsafe-inline';",
+            value: `
+              default-src 'self';
+              img-src * data:;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval';
+              style-src 'self' 'unsafe-inline';
+              connect-src 'self' vitals.vercel-insights.com;
+              frame-ancestors 'none';
+            `.replace(/\n/g, "")
           },
-          {
-            key: "Permissions-Policy",
-            value: "geolocation=(), microphone=(), camera=()",
-          },
+
+          { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=()" },
           { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
           { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
