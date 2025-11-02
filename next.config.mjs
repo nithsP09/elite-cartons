@@ -24,7 +24,7 @@ const nextConfig = {
               img-src * data:;
               script-src 'self' 'unsafe-inline' 'unsafe-eval';
               style-src 'self' 'unsafe-inline';
-              connect-src 'self' vitals.vercel-insights.com;
+              connect-src 'self' https://api.web3forms.com vitals.vercel-insights.com;
               frame-ancestors 'none';
             `.replace(/\n/g, "")
           },
