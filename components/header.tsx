@@ -55,7 +55,7 @@ export function Header() {
               console.log("Button clicked!");
               setIsOpen((prev) => !prev);
             }}
-            className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
+            className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors outline-none focus:outline-none focus-visible:outline-none"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}

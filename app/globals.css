@@ -149,4 +149,9 @@
   h6 {
     @apply font-serif font-bold;
   }
+
+  nav {
+    border: none !important;
+    outline: none !important;
+  }
 }
