@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  verification: {
+    google: "XPjZEHJm97dGwXNp7muW8Je1vMLd4iscf0mo_hBFSKc",
+  },
   openGraph: {
     title: "Elite Cartons and Packaging",
     description:
@@ -59,7 +62,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="XPjZEHJm97dGwXNp7muW8Je1vMLd4iscf0mo_hBFSKc" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         {/* ✅ LocalBusiness JSON-LD structured data for SEO */}
         <script
