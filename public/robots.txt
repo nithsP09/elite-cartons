@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://elite-cartons.vercel.app
+
+# Sitemaps
+Sitemap: https://elite-cartons.vercel.app/sitemap.xml
