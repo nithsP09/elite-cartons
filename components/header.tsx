@@ -8,6 +8,8 @@ import Image from "next/image"
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+  console.log("menu open:", isOpen);
+
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -50,8 +52,8 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => {
-              setIsOpen(!isOpen)
-              console.log("menu open:", !isOpen) // ✅ check if it toggles
+              console.log("Button clicked!");
+              setIsOpen((prev) => !prev);
             }}
             className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"

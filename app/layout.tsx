@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { Header } from "@/components/header"
+import { HeaderWrapper } from "@/components/HeaderWrapper";
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
@@ -97,7 +97,7 @@ export default function RootLayout({
 
       </head>
       <body className={`font-sans antialiased flex flex-col min-h-screen`}>
-        <Header />
+        <HeaderWrapper />
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />
