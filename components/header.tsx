@@ -17,7 +17,7 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+    <header className="sticky top-0 z-[9999] w-full border-b border-border bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -49,7 +49,10 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => {
+              setIsOpen(!isOpen)
+              console.log("menu open:", !isOpen) // ✅ check if it toggles
+            }}
             className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
@@ -59,7 +62,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
+          <nav className="md:hidden pb-4 space-y-2 bg-white border border-red-500">
             {navItems.map((item) => (
               <Link
                 key={item.href}

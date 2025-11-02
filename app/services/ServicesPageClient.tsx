@@ -79,8 +79,6 @@ export default function ServicesPageClient() {
         }
     }, []) // empty deps — run once on client
 
-
-
   const services = [
     {
       title: "Tissue Boxes",
