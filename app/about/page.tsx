@@ -37,7 +37,7 @@ export const metadata = {
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/about"
-        : "http://localhost:3000/about",
+        : "https://elite-cartons.vercel.app/about",
     siteName: "ElitE Cartons and Packaging",
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata = {
     canonical:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/about"
-        : "http://localhost:3000/about",
+        : "https://elite-cartons.vercel.app/about",
   },
 }
 

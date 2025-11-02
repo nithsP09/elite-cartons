@@ -43,7 +43,7 @@ title: "Our Services | Elite Cartons - Custom Packaging Solutions",
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/services"
-        : "http://localhost:3000/services",
+        : "https://elite-cartons.vercel.app/services",
     siteName: "Elite Cartons",
     images: [
       {
@@ -60,7 +60,7 @@ title: "Our Services | Elite Cartons - Custom Packaging Solutions",
     canonical:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/services"
-        : "http://localhost:3000/services",
+        : "https://elite-cartons.vercel.app/services",
   },
 }
 

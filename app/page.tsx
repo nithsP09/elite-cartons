@@ -90,7 +90,7 @@ export const metadata = {
   metadataBase:
     process.env.NODE_ENV === "production"
       ? new URL("https://www.elitecartons.com")
-      : new URL("http://localhost:3000"),
+      : new URL("https://elite-cartons.vercel.app"),
 
   openGraph: {
     title: "ElitE Cartons and Packaging",
@@ -99,7 +99,7 @@ export const metadata = {
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com"
-        : "http://localhost:3000",
+        : "https://elite-cartons.vercel.app",
     siteName: "ElitE Cartons and Packaging",
     images: [
       {
@@ -117,7 +117,7 @@ export const metadata = {
     canonical:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com"
-        : "http://localhost:3000",
+        : "https://elite-cartons.vercel.app",
   },
 }
 
