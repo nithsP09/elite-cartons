@@ -121,13 +121,15 @@ export function Footer() {
 
             <p className="text-center">
               Designed with ❤️ by{" "}
-              <span
-                onClick={(e) => e.preventDefault()}
+              <a
+                href="https://nithyaparvathyportfolio.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-bold cursor-pointer hover:underline"
                 style={{ color: "#fffdd0" }}
               >
                 Nithya Parvathy
-              </span>
+              </a>
             </p>
 
 
