@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { HeaderWrapper } from "@/components/HeaderWrapper";
+import { HeaderWrapper } from "@/components/HeaderWrapper"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
@@ -63,7 +63,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
-        {/* ✅ LocalBusiness JSON-LD structured data for SEO */}
+
+        {/* ✅ LocalBusiness JSON-LD (already present) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -90,13 +91,33 @@ export default function RootLayout({
                 "addressCountry": "IN",
               },
               "openingHours": "Mo-Fr 09:00-18:00",
-              "priceRange": "$$",              
+              "priceRange": "$$",
             }),
           }}
         />
 
+        {/* 🚀 NEW: Organization Schema (Google uses this for LOGO) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Elite Cartons and Packaging",
+              "url":
+                process.env.NODE_ENV === "production"
+                  ? "https://www.elitecartons.com"
+                  : "https://elite-cartons.vercel.app",
+              "logo":
+                process.env.NODE_ENV === "production"
+                  ? "https://www.elitecartons.com/logo-512.png"
+                  : "https://elite-cartons.vercel.app/logo-512.png",
+            }),
+          }}
+        />
       </head>
-      <body className={`font-sans antialiased flex flex-col min-h-screen`}>
+
+      <body className="font-sans antialiased flex flex-col min-h-screen">
         <HeaderWrapper />
         <main className="flex-1">{children}</main>
         <Footer />
