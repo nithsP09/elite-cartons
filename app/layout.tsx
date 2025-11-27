@@ -103,7 +103,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Elite Cartons and Packaging",
+              "name": "ElitE Cartons and Packaging",
               "url":
                 process.env.NODE_ENV === "production"
                   ? "https://www.elitecartons.com"
