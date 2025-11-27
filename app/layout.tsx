@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       ? "https://www.elitecartons.com"
       : "http://localhost:3000"
   ),
-  title: "Elite Cartons and Packaging",
+  title: "ElitE Cartons and Packaging",
   description:
     "Premium eco-friendly packaging solutions in Kochi, Kerala. Manufacturer and exporter of tissue boxes, paper bags, cake boxes, and food packaging.",
   generator: "v0.app",
@@ -26,20 +26,20 @@ export const metadata: Metadata = {
     google: "XPjZEHJm97dGwXNp7muW8Je1vMLd4iscf0mo_hBFSKc",
   },
   openGraph: {
-    title: "Elite Cartons and Packaging",
+    title: "ElitE Cartons and Packaging",
     description:
       "Premium eco-friendly packaging solutions in Kochi, Kerala. Explore tissue boxes, cake boxes, paper bags, and more.",
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com"
         : "http://localhost:3000",
-    siteName: "Elite Cartons and Packaging",
+    siteName: "ElitE Cartons and Packaging",
     images: [
       {
         url: "/logo_in_seo.jpg",
         width: 1200,
         height: 630,
-        alt: "Elite Cartons and Packaging Logo",
+        alt: "ElitE Cartons and Packaging Logo",
       },
     ],
     locale: "en_IN",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elite Cartons and Packaging",
+    title: "ElitE Cartons and Packaging",
     description:
       "Premium eco-friendly packaging solutions in Kochi, Kerala — tissue boxes, paper bags, and cake boxes.",
     images: ["/logo_in_seo.jpg"],
@@ -71,7 +71,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Elite Cartons and Packaging",
+              "name": "ElitE Cartons and Packaging",
               "image":
                 process.env.NODE_ENV === "production"
                   ? "https://www.elitecartons.com/logo_in_seo.jpg"

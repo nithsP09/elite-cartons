@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Gallery | Elite Cartons and Packaging",
+  title: "Gallery | ElitE Cartons and Packaging",
   description:
     "Explore our gallery showcasing a wide range of premium packaging products including cake boxes, tissue boxes, paper bags, and eco-friendly food packaging made in Kerala.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/gallery"
         : "https://elite-cartons.vercel.app/gallery",
-    siteName: "Elite Cartons and Packaging",
+    siteName: "ElitE Cartons and Packaging",
     images: [
       {
         url:
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
             : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
         width: 1200,
         height: 630,
-        alt: "Elite Cartons Packaging Services",
+        alt: "ElitE Cartons and Packaging",
       },
     ],
     locale: "en_IN",

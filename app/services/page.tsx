@@ -2,9 +2,9 @@ import { Metadata } from "next"
 import ServicesPageClient from "./ServicesPageClient"
 
 export const metadata: Metadata = {
-title: "Our Services | Elite Cartons - Custom Packaging Solutions",
+title: "Our Services | ElitE Cartons - Custom Packaging Solutions",
   description:
-    "Explore Elite Cartons' range of premium packaging products including tissue boxes, paper bags, cake boxes, and food packaging. Eco-friendly, customizable, and durable solutions for your business.",
+    "Explore ElitE Cartons' range of premium packaging products including tissue boxes, paper bags, cake boxes, and food packaging. Eco-friendly, customizable, and durable solutions for your business.",
   keywords: [
     "Elite Cartons",
     "ElitE Cartons",
@@ -37,14 +37,14 @@ title: "Our Services | Elite Cartons - Custom Packaging Solutions",
     "premium packaging",
   ],
   openGraph: {
-    title: "Our Services | Elite Cartons - Custom Packaging Solutions",
+    title: "Our Services | ElitE Cartons - Custom Packaging Solutions",
     description:
       "Discover high-quality, customizable packaging products — from tissue and cake boxes to paper bags and eco-friendly food packaging, crafted by Elite Cartons.",
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/services"
         : "https://elite-cartons.vercel.app/services",
-    siteName: "Elite Cartons",
+    siteName: "ElitE Cartons and Packaging Cartons",
     images: [
       {
         url:
@@ -53,7 +53,7 @@ title: "Our Services | Elite Cartons - Custom Packaging Solutions",
             : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
         width: 1200,
         height: 630,
-        alt: "Elite Cartons Packaging Services",
+        alt: "ElitE Cartons Packaging Services",
       },
     ],
     locale: "en_IN",

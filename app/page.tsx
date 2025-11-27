@@ -109,7 +109,7 @@ export const metadata = {
           : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
       width: 1200,
       height: 630,
-      alt: "Elite Cartons Packaging Services",
+      alt: "ElitE Cartons Packaging Services",
     },
   ],
     locale: "en_IN",

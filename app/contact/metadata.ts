@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Elite Cartons | Custom Packaging Solutions Kochi",
+  title: "Contact ElitE Cartons | Custom Packaging Solutions Kochi",
   description:
-    "Get in touch with Elite Cartons for custom packaging solutions in Kochi. Reach us via phone, email, or our contact form for inquiries and quotes.",
+    "Get in touch with ElitE Cartons for custom packaging solutions in Kochi. Reach us via phone, email, or our contact form for inquiries and quotes.",
   keywords: [
     "Elite contact",
     "ElitE contact",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "packaging manufacturers Kerala",
   ],
   openGraph: {
-    title: "Contact Elite Cartons | Custom Packaging Solutions Kochi",
+    title: "Contact ElitE Cartons | Custom Packaging Solutions Kochi",
     description:
-      "Have questions? Contact Elite Cartons today for premium packaging solutions tailored to your business needs.",
+      "Have questions? Contact ElitE Cartons today for premium packaging solutions tailored to your business needs.",
     url:
       process.env.NODE_ENV === "production"
         ? "https://www.elitecartons.com/contact"
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
             : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
         width: 1200,
         height: 630,
-        alt: "Elite Cartons Packaging Services",
+        alt: "ElitE Cartons Packaging Services",
       },
     ],
     locale: "en_IN",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Elite Cartons | Custom Packaging Solutions Kochi",
+    title: "Contact ElitE Cartons | Custom Packaging Solutions Kochi",
     description:
-      "Get in touch with Elite Cartons for inquiries, quotes, or custom packaging solutions in Kochi.",
+      "Get in touch with ElitE Cartons for inquiries, quotes, or custom packaging solutions in Kochi.",
     images: ["/logo_in_seo.jpg"],
   },
   alternates: {

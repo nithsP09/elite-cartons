@@ -47,7 +47,7 @@ export const metadata = {
             : "https://elite-cartons.vercel.app/logo_in_seo.jpg",
         width: 1200,
         height: 630,
-        alt: "Elite Cartons Packaging Services",
+        alt: "ElitE Cartons Packaging Services",
       },
     ],
     locale: "en_IN",
@@ -82,7 +82,7 @@ export default function AboutPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">Our Story</h2>
           <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              Founded in 2014, Elite Cartons and Packaging began with a simple vision: to provide high-quality, reliable
+              Founded in 2014, ElitE Cartons and Packaging began with a simple vision: to provide high-quality, reliable
               packaging solutions to businesses across Kerala. What started as a small operation has grown into a
               trusted partner for leading brands in hospitality, food service, automotive, and retail sectors.
             </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               your brand and a promise to your customers.
             </p>
             <p>
-              Today, Elite Cartons serves hundreds of satisfied clients, from boutique hotels and restaurants to major
+              Today, ElitE Cartons serves hundreds of satisfied clients, from boutique hotels and restaurants to major
               automotive dealerships and jewelry retailers. Our commitment to excellence and innovation continues to
               drive us forward.
             </p>
